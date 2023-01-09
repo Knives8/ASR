@@ -7,39 +7,130 @@
     android:layout_height="match_parent"
     tools:context=".SpeechRecognitionActivity">
 
+  <!--creating text view on below line-->
+
+  <!--creating a text view for displaying
+      output on below line-->
+
   <ImageView
       android:id="@+id/idIVMic"
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_centerHorizontal="true"
-      android:layout_marginTop="100dp"
+      android:contentDescription="@string/click_to_record"
       android:src="@drawable/ic_mic"
-      android:tint="@color/purple_200" />
+      app:layout_constraintBottom_toTopOf="@+id/textView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageView"
+      app:tint="@color/purple_200"
+      tools:ignore="RedundantDescriptionCheck,ImageContrastCheck" />
 
-  <!--creating text view on below line-->
+  <ImageView
+      android:id="@+id/imageView"
+      android:layout_width="327dp"
+      android:layout_height="341dp"
+      android:contentDescription="@string/todo"
+      app:layout_constraintBottom_toTopOf="@+id/textView"
+      app:layout_constraintEnd_toEndOf="@+id/idTVOutput"
+      app:layout_constraintHorizontal_bias="0.619"
+      app:layout_constraintStart_toStartOf="@+id/idTVOutput"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.53"
+      app:srcCompat="@drawable/ic_launcher_background" />
+
   <TextView
+      android:id="@+id/textView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/idIVMic"
-      android:layout_marginTop="20dp"
+      android:layout_marginBottom="8dp"
       android:gravity="center"
-      android:text="Click on Mic to speak"
+      android:text="@string/click_on_mic_to_speak"
       android:textAlignment="center"
       android:textAllCaps="false"
       android:textColor="@color/black"
-      android:textSize="18sp" />
+      android:textSize="18sp"
+      app:layout_constraintBottom_toTopOf="@+id/button2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent" />
 
-  <!--creating a text view for displaying
-      output on below line-->
   <TextView
       android:id="@+id/idTVOutput"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/idIVMic"
-      android:layout_marginTop="70dp"
       android:gravity="center"
-      android:text="Output will appear here"
+      android:text="@string/output_will_appear_here"
       android:textAlignment="center"
       android:textColor="@color/black"
-      android:textSize="20sp" />
+      android:textSize="20sp"
+      app:layout_constraintBottom_toTopOf="@+id/idIVMic"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+  <Button
+      android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.483"
+      app:layout_constraintStart_toEndOf="@+id/button2"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton"
+      app:layout_constraintVertical_bias="0.94"
+      tools:ignore="DuplicateSpeakableTextCheck" />
+
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="28dp"
+      android:layout_marginBottom="16dp"
+      android:text="@string/button2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/button3" />
+
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginBottom="16dp"
+      android:text="@string/button3"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <ImageButton
+      android:id="@+id/imageButton"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:contentDescription="@string/trash"
+      app:layout_constraintBottom_toBottomOf="@+id/imageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.799"
+      app:layout_constraintStart_toEndOf="@+id/imageButton2"
+      app:layout_constraintTop_toBottomOf="@+id/idTVOutput"
+      app:layout_constraintVertical_bias="0.761"
+      app:srcCompat="@android:drawable/arrow_up_float"
+      tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+  <ImageButton
+      android:id="@+id/imageButton2"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_marginStart="72dp"
+      android:contentDescription="@string/trash"
+      app:layout_constraintBottom_toBottomOf="@+id/imageView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/idTVOutput"
+      app:layout_constraintVertical_bias="0.761"
+      app:srcCompat="@android:drawable/arrow_up_float"
+      tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
